@@ -16,7 +16,7 @@ public final class OperationTypeChecker {
         if (userInput.startsWith("//")) {
             return new CustomOperation();
         }
-        throw new IllegalArgumentException("잘못된 문자열을 입력해주세요.");
+        throw new IllegalArgumentException("잘못된 문자열을 입력했습니다.");
     }
 
 }
