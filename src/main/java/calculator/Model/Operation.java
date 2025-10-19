@@ -20,4 +20,16 @@ public abstract class Operation {
         }
     }
 
+    public int getTotalSum() {
+        int sum = 0;
+        for (Integer num : extractionNumbers) {
+            try {
+                sum = Math.addExact(sum, num);
+            } catch (ArithmeticException e) {
+                throw new IllegalArgumentException("합산 결과가 너무 큽니다.");
+            }
+        }
+        return sum;
+    }
+
 }

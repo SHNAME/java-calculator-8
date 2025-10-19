@@ -17,6 +17,7 @@ public class CalculatorController {
     public void operateCalculator() {
         String userInput = getUserInput();
         Operation operation = createOperation(userInput);
+        int totalSum = calculate(operation, userInput);
 
     }
 
@@ -26,6 +27,12 @@ public class CalculatorController {
 
     private Operation createOperation(String userInput) {
         return OperationTypeChecker.checkOperationType(userInput);
+    }
+
+    private int calculate(Operation operation, String userInput) {
+        operation.validString(userInput);
+        operation.extractNumber(userInput);
+        return operation.getTotalSum();
     }
 
 }
